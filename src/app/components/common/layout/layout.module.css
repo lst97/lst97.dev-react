@@ -1,0 +1,36 @@
+.pixelArtBorder {
+  border-radius: 8px;
+  border-width: 4px;
+  border-style: double;
+  border-color: rgb(0, 43, 54);
+}
+
+.container {
+  position: relative;
+}
+
+.pixelArtVerticalTextRight {
+  position: absolute;
+  top: 5%;
+  right: 0;
+  transform: translateX(50%) rotate(-90deg);
+  background-color: rgb(253, 246, 227);
+  text-align: start;
+  white-space: nowrap;
+  font-weight: bold;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.pixelArtVerticalTextTop {
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgb(253, 246, 227);
+  text-align: center;
+  white-space: nowrap;
+  font-weight: bold;
+  padding-left: 8px;
+  padding-right: 8px;
+}

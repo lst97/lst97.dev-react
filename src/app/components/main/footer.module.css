@@ -1,0 +1,8 @@
+.footerLayout {
+  display: relative;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  z-index: 100;
+}
