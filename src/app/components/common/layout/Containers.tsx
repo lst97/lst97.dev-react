@@ -45,7 +45,9 @@ export function PkmStatusContainer({
             : styles.pkmHealthContainerRight
         } w-full`}
       >
-        <span className={`${styles.pkmHealthContainerTitle}`}>{title}</span>
+        <span className={`${styles.pkmHealthContainerTitle} text-xl`}>
+          {title}
+        </span>
       </div>
     </div>
   );
@@ -62,7 +64,7 @@ export function PkmBattleLayout({
 }) {
   return (
     <div className="flex flex-row items-center">
-      {direction === "left" && <div className="m-8"> {children}</div>}
+      {direction === "left" && <div className="m-8">{children}</div>}
 
       <div className="basis-1/2">
         <PkmStatusContainer
