@@ -1,0 +1,24 @@
+@keyframes flashTriangle {
+  to {
+    visibility: hidden;
+  }
+}
+
+.pkmLink {
+  color: #000000;
+  text-decoration: underline;
+  font-weight: bold;
+  position: relative;
+}
+
+.pkmLink:hover::before {
+  content: "";
+  display: inline-block;
+  margin-right: 5px; /* Adjust spacing between triangle and text */
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 5px 0 5px 10px; /* Style the triangle */
+  border-color: transparent transparent transparent #000000; /* Color */
+  animation: flashTriangle 1s steps(2, start) infinite;
+}

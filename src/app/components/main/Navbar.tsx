@@ -9,7 +9,14 @@ function Navbar() {
     <PixelContainer borderTextRight="Navigation" className="basis-1/4">
       <nav className={`${styles.navbarLayout}`}>
         <div className={styles.navbarLogo}>
-          <Image src="" alt="Logo" />
+          <Image
+            src="/ascii_icon.png"
+            alt="Logo"
+            width={200}
+            height={200}
+            className="shadow-lg cursor-pointer object-cover m-8"
+          />
+          {"TO BE REPLACED BY PIXEL ART GENERATOR"}
         </div>
         <ul className={styles.navbarItems}>
           <li>
