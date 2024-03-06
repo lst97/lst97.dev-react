@@ -11,7 +11,7 @@ export function Dashboard({ children }: { children?: React.ReactNode }) {
         style={{ height: "100vh", paddingTop: "10px" }}
       >
         <Navbar />
-        <main className="basis-5/6">
+        <main className="basis-4/5">
           <div className="flex flex-col h-full justify-between">
             <PixelContainer borderTextTop="Dashboard">
               {children}

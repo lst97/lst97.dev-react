@@ -1,24 +1,17 @@
 // components/Navbar.js
-import Link from "next/link";
 import styles from "./navbar.module.css";
 import Image from "next/image";
 import { PixelContainer } from "../common/layout/Containers";
 import { PkmLink } from "../common/Links";
+import { AsciiTextGenerator } from "../common/generators/Ascii.jsx";
 
 function Navbar() {
   return (
-    <PixelContainer borderTextRight="Navigation" className="basis-1/6">
+    <PixelContainer borderTextRight="Navigation" className="basis-1/5">
       <nav className={`${styles.navbarLayout}`}>
-        <div className="flex flex-col">
+        <div className="flex flex-col w-full">
           <div className={styles.navbarLogo}>
-            <Image
-              src="/ascii_icon.png"
-              alt="Logo"
-              width={200}
-              height={200}
-              className="shadow-lg cursor-pointer object-cover m-8"
-            />
-            {"TO BE REPLACED BY PIXEL ART GENERATOR"}
+            <AsciiTextGenerator text="LST97" />
           </div>
           <ul className={styles.navbarItems}>
             <li>

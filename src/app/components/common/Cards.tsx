@@ -1,4 +1,4 @@
-import Image from "next/image";
+/* eslint-disable @next/next/no-img-element */
 import { PixelContainer } from "./layout/Containers";
 import styles from "./card.module.css";
 export function PkmCard({

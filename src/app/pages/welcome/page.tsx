@@ -8,14 +8,26 @@ import { PkmLink } from "@/app/components/common/Links";
 import Image from "next/image";
 import { PkmCard } from "@/app/components/common/Cards";
 
+import dynamic from "next/dynamic";
+
+const DynamicTerminal = dynamic(
+  () => import("@/app/components/common/terminal/Terminal"),
+  {
+    loading: () => <img src="/loading-pixel-art.gif" className="w-full" />,
+    ssr: false,
+  }
+);
+
 const Welcome = () => {
   return (
     <Dashboard>
       <div className="flex flex-col">
-        <PixelContainer borderTextTop="~/lst97" className="m-4">
+        <PixelContainer className="m-4">
           <h1>
-            {/* Xterm.js */}
             Text generation script, train an AI to answer questions about myself
+            <div className="w-3/4 overflow-clip rounded-md shadow-md m-4 ">
+              <DynamicTerminal />
+            </div>
           </h1>
         </PixelContainer>
       </div>
