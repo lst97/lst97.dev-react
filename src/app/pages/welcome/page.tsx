@@ -4,9 +4,9 @@ import {
 } from "@/app/components/common/layout/Containers";
 import { Dashboard } from "@/app/components/main/Dashboard";
 import React from "react";
-import styles from "../../components/common/styles/styles.module.css";
 import { PkmLink } from "@/app/components/common/Links";
 import Image from "next/image";
+import { PkmCard } from "@/app/components/common/Cards";
 
 const Welcome = () => {
   return (
@@ -102,11 +102,14 @@ const Welcome = () => {
         </PkmBattleLayout>
       </div>
 
-      <div className="flex flex-row">
-        <div className="basis-1/4"> content</div>
-        <div className="basis-3/4">
-          PKM health divider - Cards to show what I have made
-        </div>
+      <div className="grid grid-cols-2 gap-32 p-16">
+        <PkmCard title={"Test"} description={"2018 * this is a test"}>
+          <p>This is a test</p>
+        </PkmCard>
+
+        <PkmCard title={"Test"} description={"2018 * this is a test"}>
+          <p>This is a test</p>
+        </PkmCard>
       </div>
     </Dashboard>
   );

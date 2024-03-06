@@ -3,10 +3,11 @@ import Link from "next/link";
 import styles from "./navbar.module.css";
 import Image from "next/image";
 import { PixelContainer } from "../common/layout/Containers";
+import { PkmLink } from "../common/Links";
 
 function Navbar() {
   return (
-    <PixelContainer borderTextRight="Navigation" className="basis-1/4">
+    <PixelContainer borderTextRight="Navigation" className="basis-1/6">
       <nav className={`${styles.navbarLayout}`}>
         <div className="flex flex-col">
           <div className={styles.navbarLogo}>
@@ -21,24 +22,35 @@ function Navbar() {
           </div>
           <ul className={styles.navbarItems}>
             <li>
-              <Link href="/pages/welcome" className={styles.navbarItem}>
-                HOME
-              </Link>
+              <PixelContainer className="bg-amber-100 w-full text-center py-4">
+                <PkmLink href="/pages/welcome" className={styles.navbarItem}>
+                  HOME
+                </PkmLink>
+              </PixelContainer>
             </li>
             <li>
-              <Link href="/pages/resources" className={styles.navbarItem}>
-                RESOURCES
-              </Link>
+              <PixelContainer className="bg-amber-100 w-full text-center py-4">
+                <PkmLink
+                  href="/pages/resources"
+                  className={`${styles.navbarItem}`}
+                >
+                  RESOURCES
+                </PkmLink>
+              </PixelContainer>
             </li>
             <li>
-              <Link href="/pages/projects" className={styles.navbarItem}>
-                PROJECTS
-              </Link>
+              <PixelContainer className="bg-amber-100 w-full text-center py-4">
+                <PkmLink href="/pages/projects" className={styles.navbarItem}>
+                  PROJECTS
+                </PkmLink>
+              </PixelContainer>
             </li>
             <li>
-              <Link href="/pages/about" className={styles.navbarItem}>
-                ABOUT
-              </Link>
+              <PixelContainer className="bg-amber-100 w-full text-center py-4">
+                <PkmLink href="/pages/about" className={styles.navbarItem}>
+                  ABOUT
+                </PkmLink>
+              </PixelContainer>
             </li>
           </ul>
         </div>
