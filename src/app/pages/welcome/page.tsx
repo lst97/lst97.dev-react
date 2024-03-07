@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import {
   PixelContainer,
   PkmBattleLayout,
@@ -6,14 +7,15 @@ import { Dashboard } from "@/app/components/main/Dashboard";
 import React from "react";
 import { PkmLink } from "@/app/components/common/Links";
 import Image from "next/image";
-import { PkmCard } from "@/app/components/common/Cards";
+import { PkmCard, PkmCardLite } from "@/app/components/common/Cards";
 
 import dynamic from "next/dynamic";
+import { NoteItem, NoteList } from "@/app/components/common/items/Notes";
 
 const DynamicTerminal = dynamic(
   () => import("@/app/components/common/terminal/Terminal"),
   {
-    loading: () => <img src="/loading-pixel-art.gif" className="w-full" />,
+    loading: () => <img src="/loading-pixel-art.gif" />,
     ssr: false,
   }
 );
@@ -21,14 +23,14 @@ const DynamicTerminal = dynamic(
 const Welcome = () => {
   return (
     <Dashboard>
-      <div className="flex flex-col">
-        <PixelContainer className="m-4">
-          <h1>
+      <div className="flex flex-col justify-center items-center m-8 px-12">
+        <PixelContainer className=" flex flex-col justify-center items-center bg-amber-100">
+          <div className="border-b-2 border-black w-full text-center">
             Text generation script, train an AI to answer questions about myself
-            <div className="w-3/4 overflow-clip rounded-md shadow-md m-4 ">
-              <DynamicTerminal />
-            </div>
-          </h1>
+          </div>
+          <div className="rounded-b-md shadow-md">
+            <DynamicTerminal />
+          </div>
         </PixelContainer>
       </div>
       <div className="mx-24 mt-8">
@@ -114,7 +116,15 @@ const Welcome = () => {
         </PkmBattleLayout>
       </div>
 
-      <div className="grid grid-cols-2 gap-32 p-16">
+      <div className="flex items-center justify-center mb-6 mt-8">
+        <PixelContainer className="p-4 w-2/4 shadow-md">
+          <p className="text-center italic font-bold">
+            Something I have made \̅_̅/̷̚ʾ
+          </p>{" "}
+        </PixelContainer>
+      </div>
+
+      <div className="grid grid-cols-2 gap-16 px-16">
         <PkmCard title={"Test"} description={"2018 * this is a test"}>
           <p>This is a test</p>
         </PkmCard>
@@ -122,6 +132,59 @@ const Welcome = () => {
         <PkmCard title={"Test"} description={"2018 * this is a test"}>
           <p>This is a test</p>
         </PkmCard>
+      </div>
+      <br />
+
+      <div className="flex items-center justify-center mb-6 mt-8">
+        <PixelContainer className="p-4 w-2/4 shadow-md">
+          <p className="text-center">
+            <img
+              className="inline-block h-7 w-7"
+              alt="👀"
+              src="data:image/png;base64,R0lGODlhDgAPAKIEAMzMmWZmZv///wAAAP///wAAAAAAAAAAACH5BAEAAAQALAAAAAAOAA8AAAMwSLrc/hCO0SYbQlCFNc8Z1YUE1okaOaWi6U1rG5fBELz1vQWAp/A+zmZhiRiPSEUCADs="
+            />{" "}
+            <p className="italic inline font-bold">Latest Notes</p>
+          </p>
+        </PixelContainer>
+      </div>
+      <NoteList className="grid grid-cols-1 divide-y divide-gray-400">
+        <NoteItem title="Test" date="1 Mar 2024" />
+        <NoteItem title="Test" date="1 Mar 2024" />
+        <NoteItem title="Test" date="1 Mar 2024" />
+      </NoteList>
+      <br />
+      <div className="flex items-center justify-center mb-6 mt-8">
+        <PixelContainer className="p-4 w-2/4 shadow-md">
+          <p className="text-center italic font-bold">
+            From the lab - EXPERIMENTAL{" "}
+            <img
+              className="inline-block h-6 w-7"
+              alt="☣️"
+              src="/radioactive-pixel-art.png"
+            />
+          </p>
+        </PixelContainer>
+      </div>
+
+      <div className="grid grid-cols-3 gap-8 px-16">
+        <PkmCardLite title={"Test but a little bit long"} />
+        <PkmCardLite title={"Test"} />
+        <PkmCardLite title={"Test"} />
+      </div>
+
+      <div className="grid grid-cols-2 gap-4 m-16">
+        <PixelContainer className="h-60">
+          <p>Local time</p>
+        </PixelContainer>
+        <PixelContainer>
+          <p>Code activity</p>
+        </PixelContainer>
+        <PixelContainer>
+          <p className="h-60">Visit Counter</p>
+        </PixelContainer>
+        <PixelContainer>
+          <p>More</p>
+        </PixelContainer>
       </div>
     </Dashboard>
   );
