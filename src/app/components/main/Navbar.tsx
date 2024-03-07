@@ -1,4 +1,3 @@
-// components/Navbar.js
 import styles from "./navbar.module.css";
 import Image from "next/image";
 import { PixelContainer } from "../common/layout/Containers";

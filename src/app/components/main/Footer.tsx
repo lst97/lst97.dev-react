@@ -39,7 +39,8 @@ export function Footer({
           <p>© 2024 lst97.dev</p>
         </div>
       </footer>
-      <ChromeDinoGame />
+      {/* There is some issue on the component, fix later */}
+      {/* <ChromeDinoGame /> */}
     </PixelContainer>
   );
 }
